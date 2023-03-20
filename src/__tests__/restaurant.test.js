@@ -13,13 +13,13 @@ jest.mock("../utils/api");
 beforeEach(() => jest.clearAllMocks());
 
 const setup = () => {
-  render(
-    <StaticRouter>
-      <Provider store={store}>
-        <Restaurant />
-      </Provider>
-    </StaticRouter>
-  );
+    render(
+      <StaticRouter>
+        <Provider store={store}>
+          <Restaurant />
+        </Provider>
+      </StaticRouter>
+    );
 };
 
 describe("Restaurant", () => {

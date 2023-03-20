@@ -33,6 +33,8 @@ const restaurantsSlice = createSlice({
       })
       .addCase(fetchRestaurants.fulfilled, (state, action) => {
         state.restaurants = action.payload;
+        // remove the selected restaurant on search
+        state.selectedRestaurant = null;
         state.loading = false;
         state.error = null;
       })
