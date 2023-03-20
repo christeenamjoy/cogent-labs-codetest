@@ -22,6 +22,7 @@ const appRouter = createBrowserRouter([
       },
     ],
     errorElement:<ErrorElement/>
+
   },
 ]);
 

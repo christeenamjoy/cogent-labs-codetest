@@ -13,13 +13,13 @@ jest.mock("../utils/api");
 beforeEach(() => jest.clearAllMocks());
 
 const setup = () => {
-    render(
-      <StaticRouter>
-        <Provider store={store}>
-          <Restaurant />
-        </Provider>
-      </StaticRouter>
-    );
+  render(
+    <StaticRouter>
+      <Provider store={store}>
+        <Restaurant />
+      </Provider>
+    </StaticRouter>
+  );
 };
 
 describe("Restaurant", () => {
@@ -35,7 +35,8 @@ describe("Restaurant", () => {
 
     await waitFor(() => screen.findByTestId("restaurant"));
     act(() => {
-      expect(screen.getByText(/pompadour 7.7/i)).toBeInTheDocument();
+      expect(screen.getByText(/pompadour/i)).toBeInTheDocument();
+      expect(screen.getByText(/\(7.7\/10\)/)).toBeInTheDocument();
     });
   });
 

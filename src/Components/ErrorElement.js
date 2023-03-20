@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
+import Header from "./Header";
 
 const ErrorElement = () => {
   return (
-    <div>No Matching route</div>
-  )
-}
+    <>
+      <Header />
+      <div>404</div>
+      <div>No Matching route</div>
+    </>
+  );
+};
 
-export default ErrorElement
+export default ErrorElement;

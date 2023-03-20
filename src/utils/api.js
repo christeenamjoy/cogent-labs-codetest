@@ -34,6 +34,7 @@ export const placeSearch = async (searchQuery) => {
     throw new Error(`Request failed with status ${response.status}`);
   } catch (error) {
     console.error(error);
+    throw error; // re-throw the error to be caught by an error boundary component
   }
 };
 
@@ -48,6 +49,7 @@ export const autoComplete = async (searchQuery) => {
     throw new Error(`Request failed with status ${response.status}`);
   } catch (error) {
     console.error(error);
+    throw error; // re-throw the error to be caught by an error boundary component
   }
 };
 
@@ -56,12 +58,14 @@ export const fetchPlacesDetails = async (fsqId) => {
     const searchParams = new URLSearchParams({
       fields: "fsq_id,name,geocodes,location,photos,rating,menu",
     }).toString();
-    const results = await fetch(
+    const response = await fetch(
       `${FETCH_PLACE_DETAILS}${fsqId}?${searchParams}`,
       options
     );
-    return await results.json();
+    if (response.ok) return await response.json();
+    throw new Error(`Request failed with status ${response.status}`);
   } catch (error) {
     console.error(error);
+    throw error; // re-throw the error to be caught by an error boundary component
   }
 };

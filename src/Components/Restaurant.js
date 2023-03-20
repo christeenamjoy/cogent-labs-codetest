@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import { useSelector } from "react-redux";
 import { fetchPlacesDetails } from "../utils/api";
 import Shimmer from "./Shimmer";
 
@@ -14,12 +13,12 @@ const Restaurant = () => {
   useEffect(() => {
     async function fetchPlace() {
       try {
-        setLoading(true)
+        setLoading(true);
         const data = await fetchPlacesDetails(id);
         setPlace(data);
       } catch (err) {
         setError(err.message || "Something went wrong");
-      } finally{
+      } finally {
         setLoading(false);
       }
     }
@@ -37,7 +36,8 @@ const Restaurant = () => {
   return (
     <div className="p-3 text-black" data-testid="restaurant">
       <div className="font-bold text-3xl m-2 mt-8">
-        {place?.name} {place.rating} /10
+        {place?.name}
+        <span className="m-2 text-md">({place.rating ? `${place.rating}/10` : "No rating found"})</span>
       </div>
 
       {place.menu ? (

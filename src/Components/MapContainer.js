@@ -1,6 +1,7 @@
 import React, { lazy, Suspense, useEffect, memo, useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { selectRestaurant, fetchRestaurants } from "../store/restaurantSlice";
+import Shimmer from "./Shimmer";
 
 const Map = lazy(() => import("./Map"));
 const Restaurants = lazy(() => import("./Restaurants"));
@@ -24,7 +25,9 @@ const Body = memo(() => {
   return (
     <div className="flex flex-wrap" data-testid="map-container">
       {loading ? (
-        <div>Loading</div>
+        <div>
+          Loading <Shimmer />
+        </div>
       ) : (
         <Suspense fallback={<div>Loading...</div>}>
           <Map
