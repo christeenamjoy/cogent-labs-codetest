@@ -2,8 +2,8 @@ import {  fireEvent, render, screen, waitFor, waitForElementToBeRemoved } from "
 import { StaticRouter } from "react-router-dom/server";
 import { Provider } from "react-redux";
 import store from "../store/store";
-import Body from "../Components/MapContainer";
-import Header from "../Components/Header";
+import Body from "../components/MapContainer";
+import Header from "../components/Header";
 import * as api from "../utils/api";
 import { REASTAURANT_DATA, SEARCH_RESULTS } from "./mocks/data";
 

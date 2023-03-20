@@ -29,7 +29,7 @@ const CenterMarker = () => (
   </div>
 );
 
-const SimpleMap = ({
+const Map = ({
   restaurants,
   selectedRestaurant = null,
   onSelect = () => {},
@@ -46,7 +46,6 @@ const SimpleMap = ({
         bootstrapURLKeys={{ key: GOOGLE_API_KEY, libraries: ["places"] }}
         defaultCenter={defaultProps.center}
         defaultZoom={defaultProps.zoom}
-        // yesIWantToUseGoogleMapApiInternals
       >
         {restaurants.map((restaurant) => (
           <Marker
@@ -65,10 +64,10 @@ const SimpleMap = ({
   );
 };
 
-SimpleMap.propTypes = {
+Map.propTypes = {
   restaurants: PropTypes.array.isRequired,
   selectedRestaurant: PropTypes.object,
   onSelect: PropTypes.func,
 };
 
-export default SimpleMap;
+export default Map;

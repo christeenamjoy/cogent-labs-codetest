@@ -2,7 +2,7 @@ import { act, render, screen, waitFor } from "@testing-library/react";
 import { StaticRouter } from "react-router-dom/server";
 import { Provider } from "react-redux";
 import store from "../store/store";
-import Restaurant from "../Components/Restaurant";
+import Restaurant from "../components/Restaurant";
 import * as api from "../utils/api";
 import {
   FETCH_PLACE_DETAILS,

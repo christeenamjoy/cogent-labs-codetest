@@ -2,10 +2,10 @@ import { Provider } from "react-redux";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
 import store from "./store/store";
-import Container from "./Components/Container";
-import MapContainer from "./Components/MapContainer";
-import Restaurant from "./Components/Restaurant";
-import ErrorElement from "./Components/ErrorElement";
+import Container from "./components/Container";
+import MapContainer from "./components/MapContainer";
+import Restaurant from "./components/Restaurant";
+import ErrorElement from "./components/ErrorElement";
 
 const appRouter = createBrowserRouter([
   {
