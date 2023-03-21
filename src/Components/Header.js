@@ -42,7 +42,7 @@ const Header = () => {
     if (location.pathname === "/") {
       return (
         <>
-          <div className="relative col-sapn-7 flex items-center justify-center">
+          <div className="relative sm:col-sapn-7 flex items-center justify-center">
             <form onSubmit={handleSearchSubmit} className="flex w-full">
               <input
                 type="text"
@@ -58,6 +58,11 @@ const Header = () => {
                 Search
               </button>
             </form>
+
+            {/** TODO:
+             * On clicking autosuggestion assign that value to the input.
+             * Have to adjust the UI properly.
+             */}
 
             {showSearch && (
               <div
@@ -84,9 +89,10 @@ const Header = () => {
             )}
           </div>
           <button
-            className="col-sapn-2 border bg-green-900 text-white rounded-full w-48 justify-self-end"
+            className="sm:col-sapn-2 border bg-green-900 text-white rounded-full w-48 justify-self-end"
             onClick={handleRandomSelect}
             data-testid="hungry-button"
+            title="Selects a random restaurant"
           >
             I am feeling Hungry
           </button>
@@ -104,8 +110,8 @@ const Header = () => {
   ]);
 
   return (
-    <div className=" grid grid-flow-col gap-2 p-5 shadow-lg">
-      <Link to="" className="flex items-center col-sapn-2" data-testid="header">
+    <div className="sm:grid sm:grid-flow-col gap-2 p-5 shadow-lg flex flex-wrap">
+      <Link to="" className="flex items-center sm:col-sapn-2" data-testid="header">
         Congent Labs
       </Link>
       {renderSearch()}

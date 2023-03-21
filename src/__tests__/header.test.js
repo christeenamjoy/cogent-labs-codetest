@@ -9,7 +9,7 @@ import { Provider } from "react-redux";
 import store from "../store/store";
 import { StaticRouter } from "react-router-dom/server";
 import * as api from "../utils/api";
-import {  AUTOCOMPLETE, SELECTED_RESTAURANT } from "./mocks/data";
+import { AUTOCOMPLETE, SELECTED_RESTAURANT } from "./mocks/data";
 import { selectRestaurant } from "../store/restaurantSlice";
 
 jest.mock("../utils/api");
@@ -55,14 +55,6 @@ it("should show auto suggestions when user types in search input field", async (
   expect(autoSuggestionItem).toHaveLength(2);
 });
 
-it("should render the hungry button", () => {
-  setup();
-  const hungryButton = screen.getByRole("button", {
-    name: /i am feeling hungry/i,
-  });
-  expect(hungryButton).toBeInTheDocument();
-});
-
 it("should render the auto-suggestion dropdown on focus", async () => {
   setup();
   const searchInput = screen.getByRole("textbox");
@@ -85,6 +77,14 @@ it("should update the search query state on input change", async () => {
   const searchInput = screen.getByTestId("search-input");
   fireEvent.change(searchInput, { target: { value: "salad" } });
   expect(searchInput.value).toBe("salad");
+});
+
+it("should render the hungry button", () => {
+  setup();
+  const hungryButton = screen.getByRole("button", {
+    name: /i am feeling hungry/i,
+  });
+  expect(hungryButton).toBeInTheDocument();
 });
 
 it("dispatches selectRestaurant action on 'I am feeling Hungry' button click", () => {

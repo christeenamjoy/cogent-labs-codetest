@@ -1,16 +1,44 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { Provider } from "react-redux";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import "./App.css";
+import store from "./store/store";
+import MapContainer from "./components/MapContainer";
+import Restaurant from "./components/Restaurant";
+import ErrorElement from "./components/ErrorElement";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import ErrorBoundary from "./components/ErrorBoundary";
 
+const appRouter = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    children: [
+      {
+        path: "/",
+        element: <MapContainer />,
+      },
+      {
+        path: "restaurant/:id",
+        element: <Restaurant />,
+      },
+    ],
+    errorElement:<ErrorElement/>
+
+  },
+]);
+
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   // <React.StrictMode>
   <ErrorBoundary>
-    <App />
-  </ErrorBoundary>
+  <Provider store={store}>
+      <RouterProvider router={appRouter} />
+    </Provider>  </ErrorBoundary>
   // </React.StrictMode>
 );
 

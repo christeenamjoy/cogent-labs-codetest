@@ -1,15 +1,17 @@
 import React, { lazy, Suspense, useEffect, memo, useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
+
 import { selectRestaurant, fetchRestaurants } from "../store/restaurantSlice";
 import Shimmer from "./Shimmer";
 
+
 const Map = lazy(() => import("./Map"));
-const Restaurants = lazy(() => import("./Restaurants"));
+const RestaurantList = lazy(() => import("./RestaurantList"));
 
 const Body = memo(() => {
   const dispatch = useDispatch();
   const { restaurants, selectedRestaurant, loading } = useSelector(
-    (state) => state.restaurants
+    (state) => state?.restaurants
   );
 
   useEffect(() => {
@@ -35,11 +37,11 @@ const Body = memo(() => {
             selectedRestaurant={selectedRestaurant}
             onSelect={handleSelect}
           />
-          <Restaurants
+          <RestaurantList
             restaurants={
               selectedRestaurant
-                ? restaurants.filter(
-                    (r) => r.fsq_id === selectedRestaurant.fsq_id
+                ? restaurants?.filter(
+                    (r) => r?.fsq_id === selectedRestaurant?.fsq_id
                   )
                 : restaurants
             }

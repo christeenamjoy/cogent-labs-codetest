@@ -1,4 +1,10 @@
-import {  fireEvent, render, screen, waitFor, waitForElementToBeRemoved } from "@testing-library/react";
+import {
+  fireEvent,
+  render,
+  screen,
+  waitFor,
+  waitForElementToBeRemoved,
+} from "@testing-library/react";
 import { StaticRouter } from "react-router-dom/server";
 import { Provider } from "react-redux";
 import store from "../store/store";
@@ -11,7 +17,7 @@ jest.mock("../utils/api");
 
 beforeEach(() => jest.clearAllMocks());
 
-test("should Load the loading", async () => {
+const setup = () => {
   render(
     <StaticRouter>
       <Provider store={store}>
@@ -19,19 +25,18 @@ test("should Load the loading", async () => {
       </Provider>
     </StaticRouter>
   );
+};
+
+test("should Load the loading", async () => {
+  setup();
   await waitFor(() => {
     expect(screen.getByText("Loading")).toBeInTheDocument();
   });
 });
 
 test("should render map and restaurants after loading", async () => {
-  render(
-    <StaticRouter>
-      <Provider store={store}>
-        <Body />
-      </Provider>
-    </StaticRouter>
-  );
+  setup();
+
   await waitForElementToBeRemoved(() => screen.queryByText("Loading"));
   expect(screen.getByTestId("map")).toBeInTheDocument();
   expect(screen.getByTestId("restaurants")).toBeInTheDocument();
@@ -39,13 +44,8 @@ test("should render map and restaurants after loading", async () => {
 
 test("should load 50 restaurants", async () => {
   api.placeSearch.mockResolvedValue(REASTAURANT_DATA);
-  render(
-    <StaticRouter>
-      <Provider store={store}>
-        <Body />
-      </Provider>
-    </StaticRouter>
-  );
+  setup();
+
   await waitForElementToBeRemoved(() => screen.queryByText("Loading"));
   const restaurantCards = screen.getAllByTestId("restaurant-card");
   expect(restaurantCards).toHaveLength(50);
@@ -76,9 +76,27 @@ test("should update restaurants on search form submit", async () => {
   expect(api.placeSearch).toHaveBeenCalledWith("salad");
   expect(restaurantCards).toHaveLength(3);
 
-
   // Assert that search input value persisted
   expect(searchInput).toHaveValue("salad");
+});
 
- 
+test("should select a random restaurant on hungry button click", async () => {
+  render(
+    <StaticRouter>
+      <Provider store={store}>
+        <Header />
+        <Body />
+      </Provider>
+    </StaticRouter>
+  );
+  await waitForElementToBeRemoved(() => screen.queryByText("Loading"));
+
+  const hungryButton = screen.getByRole("button", {
+    name: /i am feeling hungry/i,
+  });
+  fireEvent.click(hungryButton);
+
+  const restaurantCards = screen.getAllByTestId("restaurant-card");
+
+  expect(restaurantCards).toHaveLength(1);
 });
