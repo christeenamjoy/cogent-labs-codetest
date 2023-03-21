@@ -8,7 +8,7 @@ This is a web app that helps users find restaurants close to their office (Here 
 * [Architecture](#architecture)
 * [API](#api)
 * [Techical choices](#technical-choices)
-* [Trades-offs](#tade-offs)
+* [Trade-offs](#tade-offs)
 
 # Getting Started
 
@@ -55,7 +55,7 @@ The application state is managed using Redux, with the following actions and red
 fetchRestaurants: Sets the list of restaurants based on the search query or random selection.
 selectRestaurant: Sets the details of a single restaurant, on random selection or use selection.
 
-restaurantSlice: slice of reducer for all the actions related to restaurant selection.
+restaurantSlice: slice of the reducer for all the actions related to restaurant selection.
 
 # API
 The web app uses the Foursquare Places API to fetch data about restaurants. The API provides endpoints for searching restaurants and getting details about a single restaurant. You will need to create an account and get an API key to use the API. The API documentation is available at [Foursquare Places API](https://developer.foursquare.com/places-api).
@@ -72,8 +72,13 @@ The web app uses the Foursquare Places API to fetch data about restaurants. The 
 
 * Webpack: Webpack is a popular module bundler for JavaScript applications. It is used to package all of the JavaScript, CSS, and other assets used in the web app into a single, optimized file that can be loaded quickly by the user's web browser. This helps to improve the performance and speed of the web app, making it more responsive and user-friendly.
 
-# Trade Offs
+# Trade offs
 
+* Map center is not changing as the restaurant is randomly selected or searched.
+* Mobile responsiveness is yet to be completed.
+* Test cases is added to only the main components. <70% coverage.
+* Tried to add autocomplete feature but not completed.
+* Shimmer UI is added after adding the loading text, so some of the test cases are based on loading text.
 
 
 
