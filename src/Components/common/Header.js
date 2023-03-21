@@ -1,8 +1,8 @@
 import React, { useCallback, useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
-import { fetchRestaurants, selectRestaurant } from "../store/restaurantSlice";
-import { autoComplete } from "../utils/api";
+import { fetchRestaurants, selectRestaurant } from "../../store/restaurantSlice";
+import { autoComplete } from "../../utils/api";
 
 const Header = () => {
   const dispatch = useDispatch();

@@ -9,7 +9,7 @@ import { StaticRouter } from "react-router-dom/server";
 import { Provider } from "react-redux";
 import store from "../store/store";
 import Body from "../components/MapContainer";
-import Header from "../components/Header";
+import Header from "../components/common/Header";
 import * as api from "../utils/api";
 import { REASTAURANT_DATA, SEARCH_RESULTS } from "./mocks/data";
 

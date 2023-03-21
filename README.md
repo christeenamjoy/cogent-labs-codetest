@@ -79,6 +79,7 @@ The web app uses the Foursquare Places API to fetch data about restaurants. The 
 * Test cases is added to only the main components. <70% coverage.
 * Tried to add autocomplete feature but not completed.
 * Shimmer UI is added after adding the loading text, so some of the test cases are based on loading text.
+* Monitoring tool is not Integrated. I would be using Sentry for  error monitoring and logging tool, Since It provides real-time error tracking, performance monitoring, and issue resolution workflows. It also has features like release tracking, event grouping, and user tracking, making it an ideal choice for tracking errors and issues in a production application.
 
 
 

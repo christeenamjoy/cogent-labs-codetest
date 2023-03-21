@@ -2,7 +2,7 @@ import React, { lazy, Suspense, useEffect, memo, useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import { selectRestaurant, fetchRestaurants } from "../store/restaurantSlice";
-import Shimmer from "./Shimmer";
+import Shimmer from "./common/Shimmer";
 
 
 const Map = lazy(() => import("./Map"));

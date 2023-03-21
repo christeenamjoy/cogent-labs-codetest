@@ -6,11 +6,11 @@ import "./App.css";
 import store from "./store/store";
 import MapContainer from "./components/MapContainer";
 import Restaurant from "./components/Restaurant";
-import ErrorElement from "./components/ErrorElement";
+import ErrorElement from "./components/common/ErrorElement";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import ErrorBoundary from "./components/ErrorBoundary";
+import ErrorBoundary from "./components/common/ErrorBoundary";
 
 const appRouter = createBrowserRouter([
   {

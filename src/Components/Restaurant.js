@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 
 import { fetchPlacesDetails } from "../utils/api";
-import Shimmer from "./Shimmer";
+import Shimmer from "./common/Shimmer";
 
 const Restaurant = () => {
   let { id } = useParams();

@@ -4,7 +4,7 @@ import {
   fireEvent,
   waitForElementToBeRemoved,
 } from "@testing-library/react";
-import Header from "../components/Header";
+import Header from "../components/common/Header";
 import { Provider } from "react-redux";
 import store from "../store/store";
 import { StaticRouter } from "react-router-dom/server";
