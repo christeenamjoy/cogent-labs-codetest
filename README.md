@@ -1,6 +1,6 @@
 # Restaurant Finder Web App
 
-This is a web app that helps users find restaurants close to their office (Here Cogent Labs office in Roppongi, Tokyo). It shows the top 50 restaurants with 1 km of the office and do a keyword search for restaurants. If the use is confused it provide an option to a select a random restaurant too. Also the use can view details about each restaurant, such as menu, pictures, and reviews by clicking them.
+This is a web application designed to assist users in finding nearby restaurants, specifically within a 1 km radius of the Cogent Labs office in Roppongi, Tokyo. The app presents the top 50 restaurants in the area and allows users to conduct a keyword search to find restaurants that meet their preferences. If the user is uncertain, the app provides the option to randomly select a restaurant. Additionally, users can view detailed information about each restaurant, such as menu items, photos, and reviews, by clicking on them.
 
 
 ## Table of Contents
@@ -62,9 +62,9 @@ The web app uses the Foursquare Places API to fetch data about restaurants. The 
 
 # Technical choices
 
-* React and Redux: As specified in the technical spec, React is the preferred choice for front-end development at Cogent, and Redux is a popular state management library that can be used with React to manage complex data flows and state changes in a scalable manner. This combination provides a solid foundation for building complex web applications with a great user interface and seamless user experience.
+* React and Redux: Redux is a popular state management library that can be used with React to manage complex data flows and state changes in a scalable manner. React-Redux combination provides a solid foundation for building complex web applications with a great user interface and seamless user experience. Although existing features can be accomplished using Context or component state, when considering scalability, I prefer Redux as the strong foundation.
 
-* React Router: React Router is a library that enables client-side routing for React applications. It allows for easy navigation between pages of the web app without the need for a page refresh, making the app feel more like a native desktop or mobile application. This helps to improve the user experience and provides a more seamless navigation experience.
+* React Router: React Router is a library that enables client-side routing for React applications. It allows for easy navigation between pages of the web app without the need for a page refresh, making the app feel more like a native desktop or mobile application. This helps to improve the user experience and provides a more seamless navigation experience. 
 
 * Tailwind CSS: Tailwind CSS is a utility-first CSS framework that provides pre-built styles and classes for common user interface components, such as buttons, forms, and navigation bars. Using Tailwind CSS can help to speed up development by providing a set of reusable components that can be quickly styled to match the design of the web app.
 
