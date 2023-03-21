@@ -82,5 +82,8 @@ The web app uses the Foursquare Places API to fetch data about restaurants. The 
 * Monitoring tool is not Integrated. I would be using Sentry for  error monitoring and logging tool, Since It provides real-time error tracking, performance monitoring, and issue resolution workflows. It also has features like release tracking, event grouping, and user tracking, making it an ideal choice for tracking errors and issues in a production application.
 
 
-
+Feel free to look to my other repositories. 
+Currenlt I am developing a scalable Youtube-clone with advanced features like nested comments, live chatting etc..
+Development is still in process.
+https://github.com/christeenamjoy/my-youtube
 
