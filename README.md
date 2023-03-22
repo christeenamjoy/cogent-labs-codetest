@@ -66,7 +66,7 @@ The web app uses the Foursquare Places API to fetch data about restaurants. The 
 
 * React Router: React Router is a library that enables client-side routing for React applications. It allows for easy navigation between pages of the web app without the need for a page refresh, making the app feel more like a native desktop or mobile application. This helps to improve the user experience and provides a more seamless navigation experience. 
 
-* Tailwind CSS: Tailwind CSS is a utility-first CSS framework that provides pre-built styles and classes for common user interface components, such as buttons, forms, and navigation bars. Using Tailwind CSS can help to speed up development by providing a set of reusable components that can be quickly styled to match the design of the web app.
+* Tailwind CSS: Tailwind CSS is a utility-first CSS framework that provides pre-built styles and classes for common user interface components. Using Tailwind CSS can help to speed up development by providing a set of reusable components that can be quickly styled to match the design of the web app.
 
 * Jest and React Testing Library: Jest is a popular JavaScript testing framework that is commonly used for testing React applications. React Testing Library is a library that provides utilities for testing React components in a way that simulates user behavior. Together, these tools provide a solid testing infrastructure that ensures that the web app is reliable, stable, and bug-free.
 
